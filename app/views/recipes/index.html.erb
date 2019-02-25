@@ -1,3 +1,4 @@
 <% @recipe.each do |recipe| %>
+	<%= image_tag recipe.image_url, class: "event-image" if recipe.image.present? %>
 	<h2><%= link_to recipe.title, recipe %></h2>	
 <% end %>
