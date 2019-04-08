@@ -94,8 +94,7 @@ body {
 	max-width: 100%;
 	border-radius: 5px;
 	@include box-shadow;
-	height: 800px;
-	width: 800px;
+	
 }
 .recipe-image {
   @extend .img-responsive;
