@@ -1,5 +1,6 @@
 class RecipesController < ApplicationController
 	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
 		@recipe = Recipe.all.order(created_at: :desc)
@@ -10,11 +11,11 @@ class RecipesController < ApplicationController
 	end
 
 	def new
-		@recipe = Recipe.new
+		@recipe = current_user.recipes.build
 	end
 
 	def create
-		@recipe = Recipe.new(recipe_params)
+		@recipe = current_user.recipes.build(recipe_params)
 
 		if @recipe.save
 			redirect_to @recipe, notice: "You successfully saved your recipe!"
@@ -51,6 +52,10 @@ class RecipesController < ApplicationController
 
 		def find_recipe
 			@recipe = Recipe.find(params[:id])
+
+		rescue ActiveRecord::RecordNotFound 
+			flash[:alert] = "The page you requested does not exist"
+			redirect_to recipes_path
 		end
 
 end

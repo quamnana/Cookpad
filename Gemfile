@@ -20,6 +20,9 @@ gem 'simple_form', '~> 4.0', '>= 4.0.1'
 gem 'carrierwave', '~> 1.2', '>= 1.2.3'
 gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
+gem 'devise', '~> 4.6', '>= 4.6.2'
+gem 'awesome_print', '~> 1.8'
+
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
@@ -39,3 +42,8 @@ group :test do
   gem 'chromedriver-helper'
 end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
+
+
+
+
+
