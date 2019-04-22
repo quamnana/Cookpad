@@ -1,0 +1,10 @@
+<header>
+	<h4>Leave A Comment</h4>
+</header>
+
+<%= simple_form_for [recipe, comment] do |f| %>
+	<p>
+		<%= f.input :body %>
+		<%= f.button :submit, class: "btn btn-primary" %>
+	</p>
+<% end %>

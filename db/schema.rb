@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_04_11_001235) do
+ActiveRecord::Schema.define(version: 2019_04_22_114059) do
+
+  create_table "comments", force: :cascade do |t|
+    t.text "body"
+    t.integer "recipe_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "author_id"
+    t.index ["author_id"], name: "index_comments_on_author_id"
+    t.index ["recipe_id"], name: "index_comments_on_recipe_id"
+  end
 
   create_table "directions", force: :cascade do |t|
     t.text "step"
@@ -46,6 +56,9 @@ ActiveRecord::Schema.define(version: 2019_04_11_001235) do
     t.datetime "remember_created_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "first_name"
+    t.string "last_name"
+    t.string "username"
     t.index ["email"], name: "index_users_on_email", unique: true
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
   end

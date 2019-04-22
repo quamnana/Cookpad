@@ -7,7 +7,8 @@ class RecipesController < ApplicationController
 	end
 
 	def show
-		
+		@comment = Comment.new
+		@comment.recipe_id = @recipe.id
 	end
 
 	def new
@@ -20,6 +21,7 @@ class RecipesController < ApplicationController
 		if @recipe.save
 			redirect_to @recipe, notice: "You successfully saved your recipe!"
 		else
+			flash[:alert] = "Your recipe wasnt created!"
 			render "new"
 		end
 	end

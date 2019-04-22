@@ -37,6 +37,19 @@
 	</div>
 
 	<div class="row">
+		<div class="comments">
+			<% if @recipe.comments.any? %>
+				<%= render @recipe.comments %>
+			<% else %>
+				<p>There are no comments for this recipe post</p>
+			<% end %>
+		</div>
+		<div class="col-md-12">
+			<%= render "comments/form", recipe: @recipe, comment: @comment%>
+		</div>
+	</div>
+
+	<div class="row">
 		<div class="col-md-12">
 			<%= link_to "Back To Home Page", root_path, class: "btn btn-default" %> 
 			<% if user_signed_in?%>

@@ -2,13 +2,9 @@
 	<% if @recipe.errors.any? %>
 		<div id="errors">
 			<p>
-				<%= @recipe.errors.count %> Prevented this recipe from saving..
+				<%= @recipe.errors.count %>  Prevented this recipe from saving..
 			</p>
-			<ul>
-				<% @recipe.errors.full_message do |msg|%>
-					<li><%= msg %></li>
-				<% end %>
-			</ul>
+			
 		</div>
 	<% end %>
 
