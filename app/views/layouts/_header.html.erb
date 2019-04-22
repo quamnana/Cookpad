@@ -10,7 +10,7 @@
 			<% unless user_signed_in?%>
 				<li><%= link_to " Sign Up", new_user_registration_path %></li>
 				<li><%= link_to "Sign In", new_user_session_path %></li>
-							<li><%= link_to " About Us" %></li>
+				<li><%= link_to " About Us" %></li>
 			<% end %>
 		</ul> 
 		<ul class=" nav navbar-nav navbar-right">
@@ -18,10 +18,10 @@
 				<li><%= link_to " Add New Recipe", new_recipe_path %></li>
 				<li>
 					<%= link_to edit_user_registration_path do %>
-                     	<%= "My Profile" %>
+                     	<%= "Edit Profile" %>
                 	<% end %>
 				</li>
-							<li><%= link_to " About Us" %></li>
+				<li><%= link_to " About Us" %></li>
 				<li><%= link_to "Sign Out", destroy_user_session_path, method: :delete %></li>
 			<% end %>
 		</ul>
