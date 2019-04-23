@@ -7,7 +7,7 @@
 			<div id="recipe_info">
 				<h4><%= @recipe.title %></h4> 
 				<p><%= @recipe.description %></p> 
-				<p>Submitted by: <%= "#" %></p>
+				<p><b>Submitted by: <%= @recipe.user.username%></b></p>
 			</div>
 		</div>
 	</div>
@@ -37,7 +37,7 @@
 	</div>
 
 	<div class="row">
-		<div class="comments">
+		<div id="comments">
 			<% if @recipe.comments.any? %>
 				<%= render @recipe.comments %>
 			<% else %>
