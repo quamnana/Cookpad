@@ -1,0 +1,4 @@
+<%= link_to main_app.recipe_path(notification.second_target)  do %>
+  <strong> <%= notification.actor.full_name %></strong> commented on your recipe <strong> <%= notification.second_target.title %></strong>
+  <p><%= notification.target.body %></p>
+<% end %>

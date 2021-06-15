@@ -1,7 +1,7 @@
 source 'https://rubygems.org'
 git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
-ruby '2.5.1'
+ruby '2.7.0'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.1'
@@ -22,6 +22,9 @@ gem 'cocoon', '~> 1.2', '>= 1.2.12'
 gem 'jquery-rails', '~> 4.3', '>= 4.3.3'
 gem 'devise', '~> 4.6', '>= 4.6.2'
 gem 'awesome_print', '~> 1.8'
+gem 'notifications'
+gem 'font-awesome-rails', '~> 4.7', '>= 4.7.0.7'
+gem 'acts_as_votable'
 
 
 group :development, :test do

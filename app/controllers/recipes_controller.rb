@@ -1,5 +1,5 @@
 class RecipesController < ApplicationController
-	before_action :find_recipe, only: [:show, :edit, :update, :destroy]
+	before_action :find_recipe, only: [:show, :edit, :update, :destroy, :like, :dislike]
 	before_action :authenticate_user!, except: [:index, :show]
 
 	def index
@@ -36,6 +36,16 @@ class RecipesController < ApplicationController
 		else
 			render "edit"
 		end
+	end
+
+	def like
+		@recipe.liked_by current_user
+		redirect_to @recipe
+	end
+
+	def dislike
+		@recipe.disliked_by current_user
+		redirect_to @recipe
 	end
 
 	def destroy
